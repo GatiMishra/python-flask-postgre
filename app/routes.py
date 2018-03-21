@@ -3,7 +3,7 @@
 # from flask import
 from flask import render_template
 # from app folder importing flask variable app
-from main import APP
+from app import APP
 
 # On Flask app run whenever user navigates to url 'http://127.0.0.1:5000/FeatureRequestDetails' FeatureRequestDetails function renders featureRequestDetails.html
 

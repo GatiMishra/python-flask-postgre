@@ -1,17 +1,17 @@
-from app import DB
+from sqlalchemy import Column, String, Integer, Date, Sequence
+from config import Config
 
 try:
-    class FeatureRequestApp(DB.Model):
-        """Simple database model to track event attendees."""
-    
+    class FeatureRequestApp(Config.base):
+        """Simple database model to track event attendees."""    
         __tablename__ = 'FeatureRequestApp'
-        id = DB.Column('id', DB.Integer, DB.Sequence('feature_id_seq'),unique=True,primary_key=True)
-        title = DB.Column(DB.String(250),unique=True)
-        description = DB.Column(DB.String(1000))
-        client = DB.Column(DB.String(100)) 
-        clientPriority = DB.Column(DB.Integer())
-        targetDate = DB.Column(DB.Date())
-        productArea = DB.Column(DB.String(100))
+        id = Column('id', Integer, Sequence('feature_id_seq'),unique=True,primary_key=True)
+        title = Column(String(250),unique=True)
+        description = Column(String(1000))
+        client = Column(String(100)) 
+        clientPriority = Column(Integer())
+        targetDate = Column(Date())
+        productArea = Column(String(100))
 
         def __init__(self, title, description, client, clientpriority, targetdate, productarea):
             self.title = title
@@ -21,6 +21,7 @@ try:
             self.targetDate = targetdate
             self.productArea = productarea
 
+    Config.base.metadata.create_all(Config.db)
 except ArgumentError as argexp:
     print('missing connection string or primary key', argexp)
 
