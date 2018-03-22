@@ -16,4 +16,7 @@ python-editor==1.0.3
 six==1.10.0
 SQLAlchemy==1.1.9
 Werkzeug==0.12.1
-waitress==1.0.1  
+waitress==1.0.1
+mock ==2.0.0
+requests ==2.18.4
+unittest2 ==1.1.0

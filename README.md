@@ -10,31 +10,28 @@ SQl-Alchemy ORM is used for persisting data into database Postgresql is used as 
 Pre-requisites: Project is developed using
 * Python (v.3.6.4), 
 * PostgreSql database(v.10.1)
-* Browsers: Chrome(v.64.) and Firefox(v.55+)	
+* Browsers: Chrome(v.64.) and Firefox(v.55+)
+* Flask Virtual Environment.
 
 ## TODO:
 * Building Project and Deploying In Cloud
 
 ## Installation:
 1.Download the project folder from the github.
-2.Open cmd in project folder “InsuranceLabSolutionsRepo\FeatureRequestApplication\venv\Scripts” and execute the activate
 
-**.. \InsuranceLabSolutionsRepo\FeatureRequestApplication\venv\Scripts>activate
-**(venv)..\InsuranceLabSolutionsRepo\FeatureRequestApplication\venv\Scripts>
+2.Uncomment the line inside config.py 
+db_string = "postgres://postgres:Password0@localhost:5432/featureapp".
+Make changes according to your local database and comment the cloud dbstring path.
+
+3.Uncomment the line inside run_waitress_server.py "serve(APP,host="localhost",port="5000")" to run it on the localhost.
+
+4.Activate the Virtual Environment for Flask
 	
-3.Then install required packages present in readme file 
+5.Then install required packages present in requirement.txt file 
 
-**(venv)..InsuranceLabSolutionsRepo\FeatureRequestApplication\venv\Scripts> pip install –r where r is the package name
+6.Set Flask_APP variable by using command ‘set FLASK_APP=run_waitress_server.py’
 
-4.Set Flask_APP variable by using command ‘set FLASK_APP=FeatureRequestApp.py’
-
-**(venv)..InsuranceLabSolutionsRepo\FeatureRequestApplication\venv\Scripts>set FLASK_APP=FeatureRequestApp.py
-    
-5.Type ‘flask run’ and navigate to ‘http://127.0.0.1:5000/’ you can see Feature Request App form
-
-**(venv)..\FeatureRequestApplication\venv>flask run
-						* Serving Flask app "FeatureRequestApplication"
-						* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+7.Type ‘flask run’ and navigate to ‘http://127.0.0.1:5000/’ you can see Feature Request App form
 
 ## Form Page:
 Open chrome/Mozilla and navigate to url ‘http://127.0.0.1:5000/’ where list of fields are present for customer to fill
